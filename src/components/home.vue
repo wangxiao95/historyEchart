@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Row class="header">{{title}}</Row>
+    <Row id="header" class="header">{{title}}</Row>
     <Row class="home-top fix" :style="style">
       <div class="top-item">
         <TopLeft></TopLeft>
@@ -61,7 +61,7 @@ export default {
       width: 33%;
       height: 100%;
       /*padding: 2px;*/
-      margin: 2px;
+      margin: 0.166%;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
@@ -70,9 +70,4 @@ export default {
     }
   }
 
-.container{
-  width: 100%;
-  height: 100%;
-  /*background: #2475AD;*/
-}
 </style>

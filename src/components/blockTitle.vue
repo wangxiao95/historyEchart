@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: "title",
+    name: "blockTitle",
     props: {
       text: '',
       more: '更多'
