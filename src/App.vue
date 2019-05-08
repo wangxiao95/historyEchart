@@ -13,6 +13,9 @@ export default {
     Home
   }
 }
+window.onresize = function () {
+  location.reload();
+}
 </script>
 
 <style>

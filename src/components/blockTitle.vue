@@ -1,6 +1,6 @@
 <template>
   <div class="title fix">
-    <span class="fl">基本信息</span>
+    <span class="fl">{{text}}</span>
     <a class="fr more" href="javascript:;" @click="moreFn">更多</a>
   </div>
 </template>

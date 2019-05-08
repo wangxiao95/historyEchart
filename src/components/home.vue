@@ -5,22 +5,36 @@
       <div class="top-item">
         <TopLeft></TopLeft>
       </div>
-      <div class="top-item">col-8</div>
-      <div class="top-item">col-8</div>
+      <div class="top-item">
+        <TopMiddle></TopMiddle>
+      </div>
+      <div class="top-item">
+        <TopRight></TopRight>
+      </div>
     </Row>
     <Row class="home-bottom fix" :style="style">
-      <div>12</div>
-      <div>12</div>
+      <div class="bottom-item">
+        <BottomLeft></BottomLeft>
+      </div>
+      <div class="bottom-item">
+        <!--<TopRight></TopRight>-->
+      </div>
     </Row>
   </div>
 </template>
 
 <script>
   import TopLeft from './topLeft'
+  import TopMiddle from './topMiddle'
+  import TopRight from './topRight'
+  import BottomLeft from './bottomLeft'
 export default {
   name: 'Home',
   components: {
     TopLeft,
+    TopMiddle,
+    TopRight,
+    BottomLeft,
   },
   data() {
     return {
@@ -30,7 +44,7 @@ export default {
   computed: {
     style() {
       return {
-        height: (window.innerHeight - 60) / 2 + 'px'
+        height: (window.innerHeight - 25 - 60) / 2 + 'px'
       }
     }
   },
@@ -66,6 +80,21 @@ export default {
       -moz-border-radius: 5px;
       border-radius: 5px;
       border: 1px solid #0874B5;
+      overflow: hidden;
+      .fl;
+    }
+  }
+  .home-bottom{
+    .bottom-item{
+      width: 49.5%;
+      height: 100%;
+      /*padding: 2px;*/
+      margin: 0.25%;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      border: 1px solid #0874B5;
+      overflow: hidden;
       .fl;
     }
   }

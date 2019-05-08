@@ -3895,6 +3895,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.npm.taobao.org/hex-color-regex/download/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
 
+highcharts@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.npm.taobao.org/highcharts/download/highcharts-7.1.1.tgz#8c4433e39d5e7dbdc064685d9548181a35e12c19"
+  integrity sha1-jEQz451efb3AZGhdlUgYGjXhLBk=
+
 highlight.js@^9.6.0:
   version "9.15.6"
   resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-9.15.6.tgz#72d4d8d779ec066af9a17cb14360c3def0aa57c4"
