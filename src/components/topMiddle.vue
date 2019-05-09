@@ -136,8 +136,7 @@
     methods: {
       more() {
         console.log(1);
-      },
-
+      }
     },
     mounted() {
 

@@ -20,6 +20,9 @@
         <!--<TopRight></TopRight>-->
       </div>
     </Row>
+    <div v-show="TopMiddleModal" class="modalPanel">
+      <TopMiddleModal class="modal"></TopMiddleModal>
+    </div>
   </div>
 </template>
 
@@ -28,6 +31,7 @@
   import TopMiddle from './topMiddle'
   import TopRight from './topRight'
   import BottomLeft from './bottomLeft'
+  import TopMiddleModal from './topMiddleModal'
 export default {
   name: 'Home',
   components: {
@@ -35,10 +39,12 @@ export default {
     TopMiddle,
     TopRight,
     BottomLeft,
+    TopMiddleModal,
   },
   data() {
     return {
       title: 'XX型FDJ',
+      TopMiddleModal: true
     }
   },
   computed: {
@@ -98,5 +104,29 @@ export default {
       .fl;
     }
   }
-
+  .modalPanel{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 999;
+    /*opacity: .2;*/
+    .modal{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      height: 90%;
+      margin: auto;
+      border: 1px solid #0874B5;
+      border-radius: 5px;
+      /*background: #0874B5;*/
+    }
+  }
 </style>

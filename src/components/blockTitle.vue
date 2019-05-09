@@ -1,7 +1,7 @@
 <template>
   <div class="title fix">
-    <span class="fl">{{text}}</span>
-    <a class="fr more" href="javascript:;" @click="moreFn">更多</a>
+    <span class="fl title-text"><span class="dot"></span>{{text}}</span>
+    <a v-show="isMore" class="fr more" href="javascript:;" @click="moreFn">{{more}}</a>
   </div>
 </template>
 
@@ -10,7 +10,12 @@
     name: "blockTitle",
     props: {
       text: '',
-      more: '更多'
+      more: {
+        default: '更多'
+      },
+      isMore: {
+        default: true
+      }
     },
     methods: {
       moreFn() {
@@ -21,7 +26,8 @@
 </script>
 
 <style scoped>
-.more{
-  color: #fff;
-}
+  .more{
+    color: #fff;
+  }
+
 </style>
