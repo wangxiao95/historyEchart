@@ -135,7 +135,7 @@
     },
     methods: {
       more() {
-        console.log(1);
+        this.$emit('more')
       }
     },
     mounted() {

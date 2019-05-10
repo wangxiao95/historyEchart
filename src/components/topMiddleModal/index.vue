@@ -1,6 +1,6 @@
 <template>
   <div id="modal">
-    <BlockTitle></BlockTitle>
+    <BlockTitle @moreFn="moreFn" more="X"></BlockTitle>
     <div class="main">
       <div class="item">
         <TopMiddleModalChart1></TopMiddleModalChart1>
@@ -35,7 +35,9 @@
 
     },
     methods: {
-
+      moreFn() {
+        this.$emit('moreFn')
+      }
     },
     mounted() {
 

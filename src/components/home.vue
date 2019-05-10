@@ -6,7 +6,7 @@
         <TopLeft></TopLeft>
       </div>
       <div class="top-item">
-        <TopMiddle></TopMiddle>
+        <TopMiddle @more="TopMiddleModal = true"></TopMiddle>
       </div>
       <div class="top-item">
         <TopRight></TopRight>
@@ -21,7 +21,7 @@
       </div>
     </Row>
     <div v-show="TopMiddleModal" class="modalPanel">
-      <TopMiddleModal class="modal"></TopMiddleModal>
+      <TopMiddleModal class="modal" @moreFn="TopMiddleModal = false"></TopMiddleModal>
     </div>
   </div>
 </template>
@@ -54,11 +54,16 @@ export default {
       }
     }
   },
+  mounted: {
+      // topMiddleMore() {
+      //
+      // }
+  },
   created() {
     console.log(echarts);
   },
   mounted() {
-
+    this.TopMiddleModal = false
   }
 }
 </script>
