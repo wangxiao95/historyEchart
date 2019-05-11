@@ -1,12 +1,13 @@
 <template>
   <div class="inner">
-    <BlockTitle text="障件统计" :isMore=false></BlockTitle>
+    <BlockTitle text="故障件统计" :isMore=false></BlockTitle>
     <div id="topMiddleModalChart1"></div>
   </div>
 </template>
 
 <script>
   import BlockTitle from '../blockTitle'
+
   export default {
     name: "topMiddleModalChart1",
     components: {
@@ -16,39 +17,39 @@
       return {
         barData: [
           {
-            name: 'a',
+            name: '故障件a',
             value: 5
           },
           {
-            name: 'b',
+            name: '故障件b',
             value: 7
           },
           {
-            name: 'c',
+            name: '故障件c',
             value: 9
           },
           {
-            name: 'd',
+            name: '故障件d',
             value: 2
           },
           {
-            name: 'd',
+            name: '故障件d',
             value: 2
           },
           {
-            name: 'd',
+            name: '故障件d',
             value: 2
           },
           {
-            name: 'd',
+            name: '故障件d',
             value: 2
           },
           {
-            name: 'd',
+            name: '故障件d',
             value: 20
           },
           {
-            name: 'd',
+            name: '故障件d',
             value: 2
           },
         ]
@@ -65,6 +66,14 @@
               // color: "#436EEE",
               // fontSize: 17,
             }
+          },
+          textStyle: {
+            color: "#fff",
+            // fontSize: 17,
+          },
+          lineStyle: {
+            color: "#fff",
+            // fontSize: 17,
           },
           tooltip: {
             trigger: "axis",
@@ -84,11 +93,23 @@
             splitLine:{
               show:false,
             },
+            axisLine: {
+              lineStyle: {
+                color: "#fff"
+              }
+            },
+            axisLabel: {
+              interval: 0,
+              rotate: 30
+            },
           },
           yAxis: {
-            splitLine:{
-              show:false,
+            axisLine: {
+              lineStyle: {
+                color: "#fff"
+              }
             },
+            type: 'value'
           },
           series: {
             type: 'bar',
@@ -96,7 +117,7 @@
           }
         };
 
-        myChart.setOption(option);
+        myChart.setOption(_.merge({}, chartConfig, option));
       }
     },
     mounted() {
@@ -108,6 +129,6 @@
 <style scoped>
 #topMiddleModalChart1{
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 40px);
 }
 </style>

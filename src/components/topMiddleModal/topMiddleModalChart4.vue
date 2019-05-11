@@ -1,6 +1,6 @@
 <template>
   <div class="inner">
-    <BlockTitle text="障件统计" :isMore=false></BlockTitle>
+    <BlockTitle text="修后工作时间区间" :isMore=false></BlockTitle>
     <div id="topMiddleModalChart4"></div>
   </div>
 </template>
@@ -16,19 +16,19 @@
       return {
         pieData: [
           {
-            name: '分设计缺陷',
+            name: '0~100',
             value: 5
           },
           {
-            name: '制造质量',
+            name: '101~200',
             value: 7
           },
           {
-            name: '翻修质量',
+            name: '201~300',
             value: 9
           },
           {
-            name: '其他',
+            name: '300以上',
             value: 4
           },
         ],
@@ -51,6 +51,9 @@
             itemWidth: 14,
             left: 'center',
             bottom: 20,
+            textStyle: {
+              color: "#fff",
+            },
             data: this.pieData.map(item => {return item.name}),
           },
           series : [
@@ -79,9 +82,9 @@
     },
     mounted() {
       this.initChart();
-      console.log(this.barData.map(item => {
-        return item.name;
-      }));
+      // console.log(this.barData.map(item => {
+      //   return item.name;
+      // }));
     }
   }
 </script>
@@ -89,6 +92,6 @@
 <style scoped>
 #topMiddleModalChart4{
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 40px);
 }
 </style>

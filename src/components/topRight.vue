@@ -6,12 +6,12 @@
         <Form ref="formInline" :model="formInline" inline>
           <FormItem label="起始时间:" :label-width=65>
             <DatePicker type="datetime" @on-change="startChange"></DatePicker>
-          </FormItem>
+          </FormItem>&nbsp;
           <FormItem label="结束时间:" :label-width=65>
             <DatePicker type="datetime" @on-change="endChange"></DatePicker>
           </FormItem>
           <FormItem>
-            <Button style="margin-left: 5px;" type="primary" @click="query">查询</Button>
+            <Button class="queryBtn" type="primary" @click="query">查询</Button>
           </FormItem>
         </Form>
       </Row>
@@ -49,7 +49,7 @@
             type: 'bar',
             stack:'a',
             itemStyle:{
-              normal:{color:"#3FBB49"},
+              normal:{color:"#2CCA40"},
             }
           },
           {
@@ -57,6 +57,9 @@
             type: 'bar',
             stack:'a',
             data: [3, 4, 4, 2, 5, 1],
+            itemStyle:{
+              normal:{color:"#774E3D"},
+            }
 
           },
           {
@@ -71,7 +74,7 @@
             stack:'a',
             data: [3, 10, 4, 4, 3, 2],
             itemStyle:{
-              normal:{color:"#DCBA2C"},
+              normal:{color:"#7ED8C0"},
             }
           },
           {
@@ -119,18 +122,40 @@
             bottom: 0,
             data: this.barData.map(item => {
               return item.name;
-            })
+            }),
+            textStyle: {
+              color: "#fff",
+              // fontSize: 17,
+            }
+          },
+          textStyle: {
+            color: "#fff",
+            // fontSize: 17,
+          },
+          lineStyle: {
+            color: "#fff",
+            // fontSize: 17,
           },
           xAxis: {
             data: ["aa","bb","cc","dd","ee","ff"],
             splitLine:{
               show:false,
             },
+            axisLine: {
+              lineStyle: {
+                color: "#fff"
+              }
+            }
           },
           yAxis: {
             splitLine:{
               show:false,
             },
+            axisLine: {
+              lineStyle: {
+                color: "#fff"
+              }
+            }
           },
           series: this.barData
         };
@@ -144,30 +169,58 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+  .inner{
+    background: linear-gradient(to right, #042E73, #04194E);
+  }
   .form-row{
-    /*min-height: 50px;*/
+    min-height: 32px;
     text-align: left;
-    /*line-height: 50px;*/
+    line-height: 32px;
     padding: 10px;
   }
   .row{
+    color: #ffffff;
     height: 30px;
     text-align: left;
     line-height: 30px;
     padding-left: 10px;
   }
   .item-top{
-    height: 30%;
-    overflow: auto;
+    /*height: 30%;*/
+    /*overflow: hidden;*/
   }
   .item-bottom{
-    height: 70%;
+    height: calc(100% - 112px);
   }
   /deep/.ivu-form-inline .ivu-form-item{
     margin-right: 0;
+    width: calc((100% - 60px) / 2);
+    input{
+      height: 26px;
+      line-height: 26px;
+      color: #fff;
+      background: #1D3F75;
+      border: 1px solid #0874B5;
+    }
+    i{
+      color: #fff;
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+  /deep/.ivu-form-inline .ivu-form-item:last-child{
+    width: 40px;
   }
   /deep/ .ivu-form-item{
     margin-bottom: 0;
+  }
+  /deep/ .ivu-form {
+    .ivu-form-item-label{
+      color: #fff;
+    }
+  }
+  .queryBtn{
+    margin-left: 5px;width:40px;height:26px;line-height: 24px;padding:0;background: #022F66;border-color:#666;border-radius: 2px;
   }
 </style>

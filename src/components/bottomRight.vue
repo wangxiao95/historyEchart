@@ -43,7 +43,6 @@
 
 <script>
   import BlockTitle from './blockTitle'
-  import ecStat from 'echarts-stat'
 
   export default {
     name: "bottomLeft",
@@ -63,7 +62,7 @@
           [1, 4862.4],
           [2, 5294.7],
           [3, 5934.5],
-          [4, 4171.0],
+          [4, 7171.0],
           [5, 8964.4],
           [6, 10202.2],
           [7, 11962.5],
@@ -71,7 +70,7 @@
           [9, 16909.2],
           [10, 18547.9],
           [11, 21617.8],
-          [12, 16638.1],
+          [12, 26638.1],
         ],
       }
     },
@@ -90,12 +89,33 @@
       },
       initChart() {
         var myChart = echarts.init(document.getElementById('bottomLeftChart'));
+        var markLineOpt = {
+          animation: false,
+          label: {
+            normal: {
+              // formatter: 'y = 0.5 * x + 3',
+              textStyle: {
+                align: 'right'
+              }
+            }
+          },
+          lineStyle: {
+            normal: {
+              type: 'solid'
+            }
+          },
+          tooltip: {
+            // formatter: 'y = 0.5 * x + 3'
+          },
+          data: [[{
+            coord: [0, 3],
+            symbol: 'none'
+          }, {
+            coord: [20, 13],
+            symbol: 'none'
+          }]]
+        };
 
-        var myRegression = ecStat.regression('linear', this.chartData);
-
-        myRegression.points.sort(function(a, b) {
-          return a[0] - b[0];
-        });
         var option = {
           title: {
             text: null,
@@ -109,8 +129,7 @@
             {x2: '7%', y2: '7%', width: '80%', height: '80%'}
           ],
           tooltip: {
-            // formatter: '{a}: ({c})'
-            formatter: '({c})'
+            formatter: 'Group {a}: ({c})'
           },
           textStyle: {
             color: '#ffffff'
@@ -149,61 +168,10 @@
               xAxisIndex: 0,
               yAxisIndex: 0,
               data: this.chartData,
-              markPoint: {
-                itemStyle: {
-                  normal: {
-                    color: 'transparent'
-                  }
-                },
-                label: {
-                  normal: {
-                    show: true,
-                    position: 'left',
-                    formatter: myRegression.expression,
-                    textStyle: {
-                      color: 'transparent',
-                      fontSize: 16,
-                      top: -10
-                    }
-                  }
-                },
-                data: [{
-                  coord: myRegression.points[myRegression.points.length - 1]
-                }]
-              }
+              markLine: markLineOpt
             },
-            {
-              name: 'line',
-              type: 'line',
-              showSymbol: false,
-              smooth: true,
-              data: myRegression.points,
-              lineStyle: {
-                color: 'yellow'
-              },
-              markPoint: {
-                itemStyle: {
-                  normal: {
-                    color: 'transparent'
-                  }
-                },
-                label: {
-                  normal: {
-                    show: false,
-                    position: 'left',
-                    formatter: myRegression.expression,
-                    textStyle: {
-                      color: '#333',
-                      fontSize: 14
-                    }
-                  }
-                },
-                data: [{
-                  coord: myRegression.points[myRegression.points.length - 1]
-                }]
-              }
-            }
-          ],
+
+          ]
         };
         myChart.setOption(option);
       }
@@ -216,7 +184,7 @@
 
 <style scoped lang="less">
   .inner{
-    background: linear-gradient(to right, #04194E, #042E73);
+    background: linear-gradient(to right, #042E73, #04194E);
   }
   .top{
     /*height: 40%;*/

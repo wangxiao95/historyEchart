@@ -43,7 +43,7 @@
               name: '完好',
               value: 70,
               itemStyle: {
-                color: '#44A5C7'
+                color: '#05AFF7'
               }
             },
             {
@@ -85,7 +85,7 @@
               name: '完好',
               value: 70,
               itemStyle: {
-                color: '#44A5C7'
+                color: '#05AFF7'
               }
             },
             {
@@ -130,7 +130,11 @@
         var option = {
           title : {
             text: obj.title,
-            x:'center'
+            x:'center',
+            textStyle: {
+              color: "#fff",
+              fontSize: 14,
+            }
           },
           tooltip : {
             trigger: 'item',
@@ -141,6 +145,9 @@
             itemWidth: 14,
             left: 'center',
             bottom: 20,
+            textStyle: {
+              color: "#fff",
+            },
             data: obj.data.map(item => {return item.name}),
           },
           series : [
@@ -175,10 +182,10 @@
 </script>
 
 <style scoped>
-#main{
-  width: 100%;
-  height: 100%;
-}
+  .inner{
+    color: #fff;
+    background: linear-gradient(135deg, #052357, #054C8E);
+  }
   .row{
     height: 30px;
     text-align: left;
@@ -186,11 +193,11 @@
     padding-left: 10px;
   }
   .item-top{
-    height: 25%;
-    overflow: auto;
+    height: 120px;
+    overflow: hidden;
   }
   .item-bottom{
-    height: 70%;
-    margin-top: 5%;
+    height: calc(100% - 135px);
+    margin-top: 15px;
   }
 </style>

@@ -1,12 +1,13 @@
 <template>
   <div class="inner">
-    <BlockTitle text="障件统计" :isMore=false></BlockTitle>
+    <BlockTitle text="故障所属系统统计" :isMore=false></BlockTitle>
     <div id="topMiddleModalChart2"></div>
   </div>
 </template>
 
 <script>
   import BlockTitle from '../blockTitle'
+
   export default {
     name: "topMiddleModalChart2",
     components: {
@@ -58,15 +59,29 @@
       initChart() {
         var myChart = echarts.init(document.getElementById('topMiddleModalChart2'));
         var option = {
+          title: {
+            text: '',
+            // left:'20px',
+            textStyle: {
+              // color: "#436EEE",
+              // fontSize: 17,
+            }
+          },
+          tooltip: {
+            trigger: "axis",
+          },
           xAxis: {
-            type: 'category',
             data: this.barData.map(item => {
               return item.name;
             }),
-            axisLabel: {
-              interval:0,
-              rotate: 20
+            splitLine: {
+              show: false,
             },
+            axisLabel: {
+              interval: 0,
+              rotate: 30
+            },
+
             // axisLabel: {
             //   interval: 0,
             //   formatter: function (value) {
@@ -97,13 +112,13 @@
             type: 'value'
           },
 
-          series: [{
+          series: {
             data:  this.barData,
             type: 'bar'
-          }]
+          }
         };
 
-        myChart.setOption(option);
+        myChart.setOption(_.merge({}, chartConfig, option));
       }
     },
     mounted() {
@@ -118,6 +133,6 @@
 <style scoped>
 #topMiddleModalChart2{
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 40px);
 }
 </style>

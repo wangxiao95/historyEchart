@@ -1,6 +1,6 @@
 <template>
   <div class="inner">
-    <BlockTitle text="障件统计" :isMore=false></BlockTitle>
+    <BlockTitle text="故障责任统计" :isMore=false></BlockTitle>
     <div id="topMiddleModalChart3"></div>
   </div>
 </template>
@@ -51,6 +51,9 @@
             itemWidth: 14,
             left: 'center',
             bottom: 20,
+            textStyle: {
+              color: "#fff",
+            },
             data: this.pieData.map(item => {return item.name}),
           },
           series : [
@@ -89,6 +92,6 @@
 <style scoped>
 #topMiddleModalChart3{
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 40px);
 }
 </style>

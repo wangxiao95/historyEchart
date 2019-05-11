@@ -2853,6 +2853,11 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+echarts-stat@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/echarts-stat/download/echarts-stat-1.1.1.tgz#bd48880013f579c1b867cc415c09c3fd7d9dc179"
+  integrity sha1-vUiIABP1ecG4Z8xBXAnD/X2dwXk=
+
 echarts@^4.2.1:
   version "4.2.1"
   resolved "https://registry.npm.taobao.org/echarts/download/echarts-4.2.1.tgz#9a8ea3b03354f86f824d97625c334cf16965ef03"
@@ -4815,6 +4820,11 @@ loader-utils@^1.0.2, loader-utils@^1.1.0:
     big.js "^5.2.2"
     emojis-list "^2.0.0"
     json5 "^1.0.1"
+
+loadsh@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npm.taobao.org/loadsh/download/loadsh-0.0.4.tgz#5314babd12bb13315dde024a4ca70758c5489d2d"
+  integrity sha1-UxS6vRK7EzFd3gJKTKcHWMVInS0=
 
 locate-path@^2.0.0:
   version "2.0.0"
