@@ -9,6 +9,12 @@
         <TopMiddleModalChart2></TopMiddleModalChart2>
       </div>
       <div class="item">
+        <TopMiddleModalChart3></TopMiddleModalChart3>
+      </div>
+      <div class="item">
+        <TopMiddleModalChart4></TopMiddleModalChart4>
+      </div>
+      <div class="item">
         <BlockTitle text="障件统计" :isMore=false></BlockTitle>
         <div id="topMiddleModalChart2"></div>
       </div>
@@ -24,12 +30,16 @@
   import BlockTitle from '../blockTitle'
   import TopMiddleModalChart1 from './topMiddleModalChart1'
   import TopMiddleModalChart2 from './topMiddleModalChart2'
+  import TopMiddleModalChart3 from './topMiddleModalChart3'
+  import TopMiddleModalChart4 from './topMiddleModalChart3'
   export default {
     name: "index",
     components: {
       BlockTitle,
       TopMiddleModalChart1,
       TopMiddleModalChart2,
+      TopMiddleModalChart3,
+      TopMiddleModalChart4,
     },
     computed: {
 
