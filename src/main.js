@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@babel/polyfill';
 import iview from 'iview'
 import echarts from 'echarts'
 import loadsh from 'loadsh'
