@@ -82,9 +82,6 @@
     },
     mounted() {
       this.initChart();
-      console.log(this.barData.map(item => {
-        return item.name;
-      }));
     }
   }
 </script>

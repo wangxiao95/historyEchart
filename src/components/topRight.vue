@@ -91,7 +91,7 @@
     },
     methods: {
       more() {
-        console.log(1);
+        this.$emit('more')
       },
       startChange(val) {
         this.formInline.startTime = val.split('T')[0];

@@ -146,7 +146,7 @@
     },
     methods: {
       more() {
-        this.$emit('more')
+
       }
     },
     mounted() {

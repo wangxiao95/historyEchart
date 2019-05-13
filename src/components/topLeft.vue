@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <Row class="item-top">
-      <BlockTitle text="基本信息" @moreFn="more"></BlockTitle>
+      <BlockTitle text="基本信息" @moreFn="more" :is-more=false></BlockTitle>
       <Row class="row">FDJ总数：{{FDJCount}}个</Row>
       <Row class="row">
         <Col span="12">生产厂商：{{manufacturer}}</Col>

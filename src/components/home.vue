@@ -6,10 +6,10 @@
         <TopLeft></TopLeft>
       </div>
       <div class="top-item">
-        <TopMiddle @more="TopMiddleModal = true"></TopMiddle>
+        <TopMiddle></TopMiddle>
       </div>
       <div class="top-item">
-        <TopRight></TopRight>
+        <TopRight @more="TopRightModal = true"></TopRight>
       </div>
     </div>
     <div class="home-bottom fix">
@@ -20,8 +20,8 @@
         <BottomRight></BottomRight>
       </div>
     </div>
-    <div v-show="TopMiddleModal" class="modalPanel">
-      <TopMiddleModal class="modal" @moreFn="TopMiddleModal = false"></TopMiddleModal>
+    <div v-show="TopRightModal" class="modalPanel">
+      <TopRightModal class="modal" @moreFn="TopRightModal = false"></TopRightModal>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@
   import TopRight from './topRight'
   import BottomRight from './bottomRight'
   import BottomLeft from './bottomLeft'
-  import TopMiddleModal from './topMiddleModal'
+  import TopRightModal from './topRightModal'
 
   export default {
   name: 'Home',
@@ -42,12 +42,12 @@
     TopRight,
     BottomLeft,
     BottomRight,
-    TopMiddleModal,
+    TopRightModal,
   },
   data() {
     return {
       title: 'XX型FDJ',
-      TopMiddleModal: true
+      TopRightModal: true
     }
   },
   computed: {
@@ -66,7 +66,7 @@
     console.log(echarts);
   },
   mounted() {
-    this.TopMiddleModal = false
+    this.TopRightModal = false
   }
 }
 </script>

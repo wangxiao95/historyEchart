@@ -6,22 +6,22 @@
     </div>
     <div class="main">
       <div class="item">
-        <TopMiddleModalChart1></TopMiddleModalChart1>
+        <TopRightModalChart1></TopRightModalChart1>
       </div>
       <div class="item">
-        <TopMiddleModalChart2></TopMiddleModalChart2>
+        <TopRightModalChart2></TopRightModalChart2>
       </div>
       <div class="item">
-        <TopMiddleModalChart3></TopMiddleModalChart3>
+        <TopRightModalChart3></TopRightModalChart3>
       </div>
       <div class="item">
-        <TopMiddleModalChart4></TopMiddleModalChart4>
+        <TopRightModalChart4></TopRightModalChart4>
       </div>
       <div class="item">
-        <TopMiddleModalChart5></TopMiddleModalChart5>
+        <TopRightModalChart5></TopRightModalChart5>
       </div>
       <div class="item">
-        <TopMiddleModalChart6></TopMiddleModalChart6>
+        <TopRightModalChart6></TopRightModalChart6>
       </div>
     </div>
   </div>
@@ -29,22 +29,22 @@
 
 <script>
   import BlockTitle from '../blockTitle'
-  import TopMiddleModalChart1 from './topMiddleModalChart1'
-  import TopMiddleModalChart2 from './topMiddleModalChart2'
-  import TopMiddleModalChart3 from './topMiddleModalChart3'
-  import TopMiddleModalChart4 from './topMiddleModalChart4'
-  import TopMiddleModalChart5 from './topMiddleModalChart5'
-  import TopMiddleModalChart6 from './topMiddleModalChart6'
+  import TopRightModalChart1 from './topRightModalChart1'
+  import TopRightModalChart2 from './topRightModalChart2'
+  import TopRightModalChart3 from './topRightModalChart3'
+  import TopRightModalChart4 from './topRightModalChart4'
+  import TopRightModalChart5 from './topRightModalChart5'
+  import TopRightModalChart6 from './topRightModalChart6'
   export default {
     name: "index",
     components: {
       BlockTitle,
-      TopMiddleModalChart1,
-      TopMiddleModalChart2,
-      TopMiddleModalChart3,
-      TopMiddleModalChart4,
-      TopMiddleModalChart5,
-      TopMiddleModalChart6,
+      TopRightModalChart1,
+      TopRightModalChart2,
+      TopRightModalChart3,
+      TopRightModalChart4,
+      TopRightModalChart5,
+      TopRightModalChart6,
     },
     computed: {
 
