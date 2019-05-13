@@ -93,7 +93,7 @@
     .home-top{
       height: calc((100% - 60px - 6px) / 2);
       margin: 2px 0;
-      overflow: hidden;
+      /*overflow: hidden;*/
       .top-item{
         width: calc((100% - 12px) / 3);
         height: 100%;
@@ -103,14 +103,14 @@
         -moz-border-radius: 5px;
         border-radius: 5px;
         border: 1px solid #0874B5;
-        overflow: hidden;
+        /*overflow: hidden;*/
         .fl;
       }
     }
     .home-bottom{
       height: calc((100% - 60px - 6px) / 2);
       margin: 2px 0;
-      overflow: hidden;
+      /*overflow: hidden;*/
       .bottom-item{
         width: calc((100% - 8px) / 2);
         height: 100%;
@@ -120,7 +120,7 @@
         -moz-border-radius: 5px;
         border-radius: 5px;
         border: 1px solid #0874B5;
-        overflow: hidden;
+        /*overflow: hidden;*/
         .fl;
       }
     }
