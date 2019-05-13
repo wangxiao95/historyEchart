@@ -1,183 +1,31 @@
 <template>
   <div class="inner">
-    <div class="top">
-      <BlockTitle text="状态情况" :is-more=false @moreFn="more"></BlockTitle>
-      <Form ref="formInline" :model="formInline" inline>
-        <Row style="text-align: left; padding: 10px;">
-          <FormItem label="参数:" :label-width=70>
-            <Input v-model="formInline.input"></Input>
-          </FormItem>
-          <FormItem label="FDJ号码:" :label-width=70>
-            <Input v-model="formInline.input"></Input>
-          </FormItem>
-          <FormItem label="日期:" :label-width=70>
-            <Input v-model="formInline.input"></Input>
-          </FormItem>
-          <FormItem label="架次:" :label-width=70>
-            <Input v-model="formInline.input"></Input>
-          </FormItem>
-        </Row>
-        <Row style="text-align: left; padding: 10px;">
-          <FormItem label="起始时间:" :label-width=70>
-            <DatePicker type="datetime" @on-change="startChange"></DatePicker>
-          </FormItem>
-          <FormItem label="结束时间:" :label-width=70>
-            <DatePicker type="datetime" @on-change="endChange"></DatePicker>
-          </FormItem>
-          <FormItem>
-            <Button class="queryBtn" type="primary" @click="query">查询</Button>
-          </FormItem>
-        </Row>
-      </Form>
-      <Row style="text-align: left; height: 30px; line-height: 30px;padding-left: 10px; color: #fff;">
-        <Col span="4">最大值：{{max}}</Col>
-        <Col span="4">最小值：{{min}}</Col>
-        <Col span="4">平均值：{{max}}</Col>
-        <Col span="4">是否报警：{{max}}</Col>
-        <Col span="4">报警次数：{{max}}</Col>
-      </Row>
+    <div class="custom-table">
+      <MTable class="table-box"></MTable>
     </div>
-    <div class="bottom" id="bottomLeftChart" style="width: 100%; "></div>
   </div>
 </template>
 
 <script>
   import BlockTitle from './blockTitle'
+  import MTable from './mTable'
 
   export default {
     name: "bottomLeft",
     components: {
       BlockTitle,
+      MTable,
     },
     data() {
       return {
-        max: 356,
-        min: 12,
-        formInline: {
-          input: '',
-          startTime: '',
-          endTime: '',
-        },
-        chartData:  [
-          [1, 4862.4],
-          [2, 5294.7],
-          [3, 5934.5],
-          [4, 7171.0],
-          [5, 8964.4],
-          [6, 10202.2],
-          [7, 11962.5],
-          [8, 14928.3],
-          [9, 16909.2],
-          [10, 18547.9],
-          [11, 21617.8],
-          [12, 26638.1],
-        ],
+
       }
     },
     methods: {
-      more() {
-        console.log(1);
-      },
-      startChange(val) {
-        this.formInline.startTime = val.split('T')[0];
-      },
-      endChange(val) {
-        this.formInline.endTime = val.split('T')[0];
-      },
-      query() {
-        console.log(this.formInline);
-      },
-      initChart() {
-        var myChart = echarts.init(document.getElementById('bottomLeftChart'));
-        var markLineOpt = {
-          animation: false,
-          label: {
-            normal: {
-              // formatter: 'y = 0.5 * x + 3',
-              textStyle: {
-                align: 'right'
-              }
-            }
-          },
-          lineStyle: {
-            normal: {
-              type: 'solid'
-            }
-          },
-          tooltip: {
-            // formatter: 'y = 0.5 * x + 3'
-          },
-          data: [[{
-            coord: [0, 3],
-            symbol: 'none'
-          }, {
-            coord: [20, 13],
-            symbol: 'none'
-          }]]
-        };
 
-        var option = {
-          title: {
-            text: null,
-            x: 'center',
-            y: 0
-          },
-          grid: [
-            {x: '7%', y: '7%', width: '80%', height: '80%'},
-            {x2: '7%', y: '7%', width: '80%', height: '80%'},
-            {x: '7%', y2: '7%', width: '80%', height: '80%'},
-            {x2: '7%', y2: '7%', width: '80%', height: '80%'}
-          ],
-          tooltip: {
-            formatter: 'Group {a}: ({c})'
-          },
-          textStyle: {
-            color: '#ffffff'
-          },
-          xAxis: {
-            type: 'value',
-            axisLine: {
-              lineStyle: {
-                color: "#fff"
-              }
-            },
-            splitLine: {
-              lineStyle: {
-                type: 'dashed'
-              }
-            },
-            splitNumber: this.chartData.length
-          },
-          yAxis: {
-            type: 'value',
-            axisLine: {
-              lineStyle: {
-                color: "#fff"
-              }
-            },
-            splitLine: {
-              lineStyle: {
-                type: 'dashed'
-              }
-            }
-          },
-          series: [
-            {
-              name: 'I',
-              type: 'scatter',
-              xAxisIndex: 0,
-              yAxisIndex: 0,
-              data: this.chartData,
-              markLine: markLineOpt
-            },
-
-          ]
-        };
-        myChart.setOption(option);
-      }
     },
     mounted() {
-      this.initChart();
+
     }
   }
 </script>
@@ -186,51 +34,59 @@
   .inner{
     background: linear-gradient(to right, #042E73, #04194E);
   }
-  .top{
-    /*height: 40%;*/
-  }
-  .bottom{
-    height: calc(100% - 164px);
-  }
-  /deep/ .ivu-form-item{
-    margin-bottom: 0;
-  }
-
-  /deep/ .ivu-form-inline .ivu-form-item {
-    margin-right: 0;
-    width: calc((100%) / 4);
-    input {
-      height: 26px;
-      line-height: 26px;
-      color: #fff;
-      background: #1D3F75;
-      border: 1px solid #0874B5;
+  .table-box{
+    color: #fff;
+    width: 100%;
+    height: calc(100% - 30px);
+    padding: 5px;
+    background: #04377F;
+    overflow: hidden;
+    .custom-table{
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      thead{
+        tr{
+          th{
+            height: 30px;
+            color: #20D7ED;
+            background: #20599C;
+            opacity: .9;
+            border-right: 1px solid transparent;
+          }
+        }
+      }
+      tbody{
+        tr{
+          width: 100%;
+          td{
+            height: calc((100% - 30px) / 10);
+            background: #20599C;
+            opacity: .8;
+            border-right: 1px dotted #fff;
+            border-bottom: 1px dotted #fff;
+          }
+          td:last-child{
+            color: yellow;
+            border-right: none;
+          }
+        }
+        tr:nth-child(odd){
+          background: #010427;
+        }
+        tr td:nth-child(2){
+          color: #20D7ED;
+          font-weight: 500;
+        }
+        tr td:nth-child(4){
+          color: #03FC24;
+          font-size: 18px;
+          font-weight: 800;
+        }
+        tr:last-child td{
+          border-bottom: none;
+        }
+      }
     }
-    i {
-      color: #fff;
-      height: 26px;
-      line-height: 26px;
-    }
-  }
-
-  /deep/ .ivu-form-item {
-    margin-bottom: 0;
-  }
-
-  /deep/ .ivu-form {
-    .ivu-form-item-label {
-      color: #fff;
-    }
-  }
-
-  .queryBtn {
-    margin-left: 25px;
-    width: 40px;
-    height: 26px;
-    line-height: 24px;
-    padding: 0;
-    background: #022F66;
-    border-color: #666;
-    border-radius: 2px;
   }
 </style>
