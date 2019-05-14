@@ -68,10 +68,10 @@
 </script>
 
 <style scoped lang="less">
-  td, th {height:32px;width:1%;}
+  /*td, th {height:32px;width:1%;}*/
   table thead, tbody tr {
     display:table;
-    width: calc(100% - 5px);
+    width: calc(100% - 0px);
     table-layout:fixed;
   }
   table{
@@ -80,8 +80,8 @@
     color: #fff;
     border-collapse: collapse;
     thead{
-      display: block;
-      width: calc(100% - 5px);
+      /*display: block;*/
+      width: calc(100% - 0px);
       tr{
         th{
           height: 30px;
@@ -96,14 +96,15 @@
       }
     }
     tbody{
-      height: calc(100%);
+      height: calc(100% - 60px);
       display: block;
-      overflow-y:auto;
+      /*overflow-y:auto;*/
       tr{
         width: 100%;
         td{
+          height: 30px;
           min-height: 30px;
-          width: 100px;
+          /*width: 100px;*/
           background: #20599C;
           opacity: .8;
           border-right: 1px dotted #fff;

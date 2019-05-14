@@ -281,9 +281,9 @@
     width: 100%;
     height: 100%;
     border-collapse: collapse;
-    /*overflow-x: auto;*/
+    overflow-x: auto;
     /*overflow-y: hidden;*/
-    overflow: scroll;
+    /*overflow: scroll;*/
   }
   /deep/.ivu-tabs-bar{
     margin-bottom: 0;
