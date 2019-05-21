@@ -29,7 +29,7 @@
 <script>
   import BlockTitle from './blockTitle'
   export default {
-    name: "topRight",
+    name: "FDJfaultInfo",
     components: {
       BlockTitle,
     },

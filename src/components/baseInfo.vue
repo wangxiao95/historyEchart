@@ -22,7 +22,7 @@
 <script>
   import BlockTitle from './blockTitle'
   export default {
-    name: "topLeft",
+    name: "baseInfo",
     components: {
       BlockTitle,
     },

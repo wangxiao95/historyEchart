@@ -46,7 +46,7 @@
   import ecStat from 'echarts-stat'
 
   export default {
-    name: "bottomLeft",
+    name: "statusInfo",
     components: {
       BlockTitle,
     },

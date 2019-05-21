@@ -42,7 +42,7 @@
 <script>
   import BlockTitle from './blockTitle'
   export default {
-    name: "topLeft",
+    name: "engineInfo",
     components: {
       BlockTitle,
     },

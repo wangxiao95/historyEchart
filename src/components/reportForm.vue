@@ -128,7 +128,7 @@
   import MTable from './mTable'
 
   export default {
-    name: "bottomLeft",
+    name: "reportForm",
     components: {
       MTable,
     },
