@@ -3,46 +3,46 @@
     <div id="header" class="header">{{title}}</div>
     <div class="home-top fix">
       <div class="top-item">
-        <TopLeft></TopLeft>
+        <BaseInfo></BaseInfo>
       </div>
       <div class="top-item">
-        <TopMiddle></TopMiddle>
+        <EngineInfo></EngineInfo>
       </div>
       <div class="top-item">
-        <TopRight @more="TopRightModal = true"></TopRight>
+        <FDJfaultInfo @more="TopRightModal = true"></FDJfaultInfo>
       </div>
     </div>
     <div class="home-bottom fix">
       <div class="bottom-item">
-        <BottomLeft></BottomLeft>
+        <StatusInfo></StatusInfo>
       </div>
       <div class="bottom-item">
-        <BottomRight></BottomRight>
+        <ReportForm></ReportForm>
       </div>
     </div>
     <div v-show="TopRightModal" class="modalPanel">
-      <TopRightModal class="modal" @moreFn="TopRightModal = false"></TopRightModal>
+      <ReportFormModal class="modal" @moreFn="TopRightModal = false"></ReportFormModal>
     </div>
   </div>
 </template>
 
 <script>
-  import TopLeft from './topLeft'
-  import TopMiddle from './topMiddle'
-  import TopRight from './topRight'
-  import BottomRight from './bottomRight'
-  import BottomLeft from './bottomLeft'
-  import TopRightModal from './topRightModal'
+  import BaseInfo from './baseInfo'
+  import EngineInfo from './engineInfo'
+  import FDJfaultInfo from './FDJfaultInfo'
+  import ReportForm from './reportForm'
+  import StatusInfo from './statusInfo'
+  import ReportFormModal from './reportFormModal'
 
   export default {
   name: 'Home',
   components: {
-    TopLeft,
-    TopMiddle,
-    TopRight,
-    BottomLeft,
-    BottomRight,
-    TopRightModal,
+    BaseInfo,
+    EngineInfo,
+    FDJfaultInfo,
+    StatusInfo,
+    ReportForm,
+    ReportFormModal,
   },
   data() {
     return {
